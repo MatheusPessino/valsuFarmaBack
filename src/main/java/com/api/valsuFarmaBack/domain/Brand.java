@@ -1,5 +1,7 @@
 package com.api.valsuFarmaBack.domain;
 
+import com.api.valsuFarmaBack.domain.dtos.BrandDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,11 +14,15 @@ public class Brand implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String name;
-
     public Brand() {
         super();
+    }
+
+    public Brand(BrandDTO objDto){
+        super();
+        this.id = objDto.getId();
+        this.name = objDto.getName();
     }
 
     public Brand(Integer id, String name) {
