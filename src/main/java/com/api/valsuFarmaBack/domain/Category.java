@@ -1,5 +1,7 @@
 package com.api.valsuFarmaBack.domain;
 
+import com.api.valsuFarmaBack.domain.dtos.CategoryDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,12 +24,22 @@ public class Category implements Serializable {
         super();
     }
 
+    public Category(CategoryDTO objDto){
+        super();
+        this.id = objDto.getId();
+        this.name = objDto.getName();
+        this.description = objDto.getDescription();
+    }
+
+
     public Category(Integer id, String name, String description) {
         super();
         this.id = id;
         name = this.name;
         description = this.description;
     }
+
+
 
     public Integer getId() {
         return id;
