@@ -1,5 +1,7 @@
 package com.api.valsuFarmaBack.domain;
 
+import com.api.valsuFarmaBack.domain.dtos.ProductDTO;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -15,7 +17,7 @@ public class Product implements Serializable {
 
     private String description;
 
-    private Integer price;
+    private Double price;
 
     private Integer stock;
 
@@ -31,7 +33,7 @@ public class Product implements Serializable {
         super();
     }
 
-    public Product(Integer id, String name, String description, Integer price, Integer stock, Category category, Brand brand) {
+    public Product(Integer id, String name, String description, Double price, Integer stock, Category category, Brand brand) {
         super();
         this.id = id;
         this.name = name;
@@ -66,11 +68,11 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
