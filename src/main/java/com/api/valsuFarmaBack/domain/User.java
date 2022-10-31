@@ -1,5 +1,8 @@
 package com.api.valsuFarmaBack.domain;
 
+import com.api.valsuFarmaBack.domain.dtos.CategoryDTO;
+import com.api.valsuFarmaBack.domain.dtos.UserDTO;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -21,6 +24,14 @@ public class User implements Serializable {
 
     public User() {
         super();
+    }
+
+    public User(UserDTO objDto){
+        super();
+        this.id = objDto.getId();
+        this.name = objDto.getName();
+        this.email = objDto.getEmail();
+        this.password = objDto.getPassword();
     }
 
     public User(Integer id, String name, String email, String password) {
